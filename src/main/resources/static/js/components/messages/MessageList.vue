@@ -1,12 +1,12 @@
 <template>
     <div style="position: relative; width: 300px;">
-            <message-form :messages="messages" :messageAttr="message" />
-            <message-row v-for="message in messages"
-                         :key="message.id"
-                         :message="message"
-                         :editMessage="editMessage"
-                         :deleteMessage="deleteMessage"
-                         :messages="messages" />
+        <message-form :messages="messages" :messageAttr="message" />
+        <message-row v-for="message in messages"
+                     :key="message.id"
+                     :message="message"
+                     :editMessage="editMessage"
+                     :deleteMessage="deleteMessage"
+                     :messages="messages" />
     </div>
 </template>
 
