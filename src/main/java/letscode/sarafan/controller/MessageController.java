@@ -41,8 +41,9 @@ public class MessageController {
     }
 
     @PutMapping("{id}")
-    public Message update(@PathVariable("id") Message messageFromDb,
-                                       @RequestBody Message message){
+    public Message update(
+            @PathVariable("id") Message messageFromDb,
+            @RequestBody Message message){
         BeanUtils.copyProperties(message, messageFromDb, "id");
 //        messageFromDb.setText(message.getText());
 
@@ -50,7 +51,7 @@ public class MessageController {
     }
 
     @DeleteMapping("{id}")
-    public void delete(@PathVariable("id") Message message){
+    public void delete(@PathVariable("id") Message message) {
         messageRepo.delete(message);
     }
 
