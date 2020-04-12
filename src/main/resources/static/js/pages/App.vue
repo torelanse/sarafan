@@ -54,10 +54,10 @@
                             this.removeMessageMutation(data.body)
                             break
                         default:
-                            console.error('Looks like the event type if unknown "${data.eventType}"')
+                            console.error(`Looks like the event type if unknown "${data.eventType}"`)
                     }
                 } else {
-                    console.error('Looks like the object type if unknown "${data.objectType}"')
+                    console.error(`Looks like the object type if unknown "${data.objectType}"`)
                 }
             })
         },
