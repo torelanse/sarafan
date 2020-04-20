@@ -76,16 +76,14 @@ public class MessageController {
             @RequestBody Message message) throws IOException {
         BeanUtils.copyProperties(message, messageFromDb, "id");
         fillMeta(messageFromDb);
-//        messageFromDb.setText(message.getText());
-
         Message updatedMessage = messageRepo.save(messageFromDb);
         wsSender.accept(EventType.UPDATE, updatedMessage);
+
         return updatedMessage;
     }
 
     @DeleteMapping("{id}")
     public void delete(@PathVariable("id") Message message) {
-
         messageRepo.delete(message);
         wsSender.accept(EventType.REMOVE, message);
     }
