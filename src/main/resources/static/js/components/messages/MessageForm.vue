@@ -19,7 +19,7 @@
         data() {
             return {
                 text: '',
-                id: ''
+                id: null     //id: ''
             }
         },
         watch: {
@@ -41,7 +41,7 @@
                     this.addMessageAction(message)
                 }
                 this.text = ''
-                this.id = ''
+                this.id = null   //this.id = ''
             }
         }
     }
