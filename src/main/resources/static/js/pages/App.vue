@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <v-app>
         <v-app-bar app>
             <v-toolbar-title>Sarafan</v-toolbar-title>
             <v-btn text
@@ -11,7 +11,7 @@
             <v-spacer></v-spacer>
             <v-btn text
                    v-if="profile"
-                   :disabled="$route.path === '/profile'"
+                   :disabled="$route.path === '/user'"
                     @click="showProfile">
                 {{profile.name}}
             </v-btn>
@@ -22,15 +22,14 @@
         <v-content>
             <router-view></router-view>
         </v-content>
-    </div>
+    </v-app>
 </template>
 
 <script>
     import { mapState, mapMutations } from 'vuex'
-    import {addHandler} from 'util/ws'
-
+    import { addHandler } from 'util/ws'
     export default {
-        computed: mapState (['profile']),
+        computed: mapState(['profile']),
         methods: {
             ...mapMutations([
                 'addMessageMutation',
@@ -38,11 +37,11 @@
                 'removeMessageMutation',
                 'addCommentMutation'
             ]),
-            showMessages(){
+            showMessages() {
                 this.$router.push('/')
             },
-            showProfile(){
-                this.$router.push('/profile')
+            showProfile() {
+                this.$router.push('/user')
             }
         },
         created() {
@@ -75,7 +74,7 @@
             })
         },
         beforeMount() {
-            if(!this.profile){
+            if (!this.profile) {
                 this.$router.replace('/auth')
             }
         }
@@ -83,5 +82,4 @@
 </script>
 
 <style>
-
 </style>
