@@ -3,6 +3,7 @@ package letscode.sarafan.domain;
 import com.fasterxml.jackson.annotation.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.EmbeddedId;
@@ -15,6 +16,7 @@ import java.io.Serializable;
 @Data
 @EqualsAndHashCode(of = "id")
 @ToString(of = "id")
+@NoArgsConstructor
 public class UserSubscription implements Serializable {
     @EmbeddedId
     @JsonIgnore
@@ -48,4 +50,5 @@ public class UserSubscription implements Serializable {
         this.subscriber = subscriber;
         this.id = new UserSubscriptionId(channel.getId(), subscriber.getId());
     }
+//    public UserSubscription () {}
 }
