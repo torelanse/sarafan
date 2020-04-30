@@ -55,7 +55,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 	implementation 'org.jsoup:jsoup:1.13.1'
 
-	compile group: 'postgresql', name: 'postgresql', version: '9.0-801.jdbc4'
+	compile('org.postgresql:postgresql')
 
 }
 test {
